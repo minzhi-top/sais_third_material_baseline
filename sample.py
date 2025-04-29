@@ -63,9 +63,6 @@ def batch_sample(args, eval_args, device, generative_model,
             mol = qm9_visualizer.list2pkl(
                 one_hot, charges, x, dataset_info, node_mask=node_mask)
             mol_list += mol
-    # Multiply the lengh of mol_list to 100x
-    mol_list = mol_list * 100
-    # Save the molecules
     with open(join(eval_args.model_path, 'eval/data.pkl'), "wb") as f:
         pickle.dump(mol_list, f)
 
@@ -167,4 +164,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
