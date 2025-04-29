@@ -1,0 +1,18 @@
+CUDA_ava=0,1,2,3 python main.py --n_epochs 1 \
+    --exp_name edm_competition \
+    --n_stability_samples 10000 \
+    --diffusion_noise_schedule polynomial_2 \
+    --diffusion_noise_precision 1e-5 \
+    --diffusion_steps 500 \
+    --diffusion_loss_type l2 \
+    --batch_size 64 \
+    --nf 256 \
+    --n_layers 9 \
+    --lr 1e-3 \
+    --normalize_factors '[1,4,10]' \
+    --test_epochs 1 \
+    --ema_decay 0.9999 \
+    --dataset "competition" \
+    --datadir "./data"\
+    --test_valid_epoch 0 \
+    --resume outputs/edm_competition
